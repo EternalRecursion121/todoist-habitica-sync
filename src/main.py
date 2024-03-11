@@ -197,6 +197,8 @@ class TasksSync:  # pylint: disable=too-few-public-methods
             settings.sync_delay_seconds, "Next check in {delay:.0f} seconds."
         )
 
+        self._log.info("Initialised")
+
     def run_forever(self) -> None:
         while True:
             try:

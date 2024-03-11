@@ -43,6 +43,9 @@ class Settings(BaseSettings):
         Path(".sync_cache/sync_cache.json"),
         description="Where to store synchronisation details. No need to change.",
     )
+    satchelone_client_id: str = Field()
+    satchelone_client_secret: str = Field()
+    satchelone_school_id: str = Field()
 
     @field_validator("sync_delay_seconds")
     @classmethod
@@ -57,4 +60,4 @@ def get_settings():
 
 # https://habitica.com/apidoc/#api-Task-CreateUserTasks
 # https://developer.todoist.com/sync/v7/?python#items
-TODOIST_PRIORITY_TO_HABITICA_DIFFICULTY = MappingProxyType({1: 0.1, 2: 1, 3: 2, 4: 1.5})
+TODOIST_PRIORITY_TO_HABITICA_DIFFICULTY = MappingProxyType({1: 0.1, 2: 1, 3: 1.5, 4: 2})
